@@ -11,8 +11,7 @@ public class CarFactory {
     public Car createCar(String carName){
         if( isPossibleName(carName) ){
             return new Car(carName);
-        }else{
-            return null;
         }
+        return null;
     }
 }
