@@ -14,10 +14,9 @@ public class Car {
         this.move = move;
     }
 
-    // 최댓 이동거리 판정을 위해서 필요하다.
-    public int getMove() {
-        return move;
-    }
+//    public int getMove() {
+//        return move;
+//    }
 
     public boolean isWinner(int move){
         return (this.move == move) ;
@@ -43,10 +42,19 @@ public class Car {
      * @return 이동가능 여부를 리턴
      */
     public boolean isMove(int random) {
-        if(random >= CAN_MOVE_NUM){
-            this.move++;
-            return true;
+        return (random >= CAN_MOVE_NUM );
+    }
+
+    /**
+     * move 를 업데이트하자
+     * 이렇게 하면 getMove()를 안써도 된다.
+     * @param random 랜덤 입력값
+     * @return 변경된 이동값을 리턴
+     */
+    public int updateMove(int random){
+        if(isMove(random)){
+            move++;
         }
-        return false;
+        return move;
     }
 }
