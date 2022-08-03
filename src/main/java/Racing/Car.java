@@ -13,6 +13,14 @@ public class Car {
         this.move = move;
     }
 
+    public int getMove() {
+        return move;
+    }
+
+    public boolean isWinner(int move){
+        return (this.move == move) ;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

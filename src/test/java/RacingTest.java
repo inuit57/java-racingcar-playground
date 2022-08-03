@@ -48,6 +48,5 @@ public class RacingTest {
         //when
         assertThat(mover.isMove(4)).isTrue();
         assertThat(mover.isMove(3)).isFalse();
-
     }
 }
