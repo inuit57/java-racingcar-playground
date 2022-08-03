@@ -38,22 +38,18 @@ public class Main {
 
         System.out.println(sb);
 
-//        String winners = "";
         StringBuilder winner = new StringBuilder();
         for(Car car : carList){
             if(car.isWinner(winMove)){
                 if( !winner.toString().isEmpty()){
-//                    winners +=", ";
                     winner.append(", ");
                 }
-//                winners += car.getName();
                 winner.append(car.getName());
             }
         }
 
         winner.append("가 최종우승했습니다.");
         System.out.println(winner);
-//        System.out.println(winners+"가 최종우승했습니다.");
 
     }
 
