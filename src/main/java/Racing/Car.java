@@ -1,8 +1,9 @@
 package Racing;
 
 public class Car {
+    protected static final int NAME_LEN_LIMIT = 5;
     private static final int CAN_MOVE_NUM = 4;
-    private static final int NAME_LEN_LIMIT = 5;
+
     private final String name;
     private int move ;
 
