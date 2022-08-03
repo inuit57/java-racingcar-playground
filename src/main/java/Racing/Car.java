@@ -25,4 +25,12 @@ public class Car {
 
         return sb.toString();
     }
+
+    public boolean isMove(int random) {
+        if(random >= 4){
+            this.move++;
+            return true;
+        }
+        return false;
+    }
 }

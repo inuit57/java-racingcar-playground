@@ -38,4 +38,16 @@ public class RacingTest {
         car.setMove(3);
         System.out.println(car);
     }
+
+    @Test
+    @DisplayName("이동 테스트")
+    public void moveTest(){
+        //given
+        Car mover = carFactory.createCar("mover");
+
+        //when
+        assertThat(mover.isMove(4)).isTrue();
+        assertThat(mover.isMove(3)).isFalse();
+
+    }
 }
