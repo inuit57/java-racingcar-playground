@@ -3,6 +3,8 @@ import Racing.CarFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class RacingTest {
@@ -35,7 +37,10 @@ public class RacingTest {
         //when
         System.out.println(car);
 
-        car.setMove(3);
+        //car.setMove(3);
+        car.updateMove(4);
+        car.updateMove(4);
+
         System.out.println(car);
     }
 
@@ -46,7 +51,22 @@ public class RacingTest {
         Car mover = carFactory.createCar("mover");
 
         //when
-        assertThat(mover.isMove(4)).isTrue();
-        assertThat(mover.isMove(3)).isFalse();
+//        assertThat(mover.isMove(4)).isTrue();
+//        assertThat(mover.isMove(3)).isFalse();
+
+        int expectMove = 2;
+        assertThat(mover.updateMove(4)).isEqualTo(expectMove);
+        assertThat(mover.updateMove(3)).isEqualTo(expectMove);
+    }
+
+    @Test
+    public void generateRandomTest() {
+        //given
+        int bound = 9 ;
+        for(int i =0 ; i< 1000; i++) {
+            int n = new Random().nextInt(bound)+1;
+            assertThat(n).isLessThan(bound+1);
+        }
+
     }
 }

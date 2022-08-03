@@ -1,7 +1,8 @@
 package Racing;
 
 public class Car {
-    public static final int CAN_MOVE_NUM = 4;
+    private static final int CAN_MOVE_NUM = 4;
+    private static final int NAME_LEN_LIMIT = 5;
     private final String name;
     private int move ;
 
@@ -10,13 +11,9 @@ public class Car {
         move = 1;
     }
 
-    public void setMove(int move) {
-        this.move = move;
+    public String getName() {
+        return name;
     }
-
-//    public int getMove() {
-//        return move;
-//    }
 
     public boolean isWinner(int move){
         return (this.move == move) ;
@@ -27,6 +24,9 @@ public class Car {
         StringBuilder sb = new StringBuilder();
 
         sb.append(this.name);
+        for(int i= this.name.length() ; i< NAME_LEN_LIMIT ; i++){
+            sb.append(" "); // 공백추가
+        }
         sb.append(" : ");
         for(int i=0; i< this.move; i++){
             sb.append("-");
@@ -41,7 +41,7 @@ public class Car {
      * @param random 랜덤으로 입력된 수치값
      * @return 이동가능 여부를 리턴
      */
-    public boolean isMove(int random) {
+    private boolean isMove(int random) {
         return (random >= CAN_MOVE_NUM );
     }
 
